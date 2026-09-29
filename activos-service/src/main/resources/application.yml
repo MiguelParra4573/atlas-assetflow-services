@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: activos-service
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/activos
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+server:
+  port: 8091
