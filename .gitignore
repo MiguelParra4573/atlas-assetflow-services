@@ -6,3 +6,8 @@ build/
 *.iml
 out/
 HELP.md
+
+# Documentacion de diseno: se mantiene solo en local, no se publica
+.claude/
+docs/
+/plan-cmms.md
