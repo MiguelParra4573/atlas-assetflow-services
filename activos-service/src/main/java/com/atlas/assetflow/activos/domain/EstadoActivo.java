@@ -9,5 +9,4 @@ package com.atlas.assetflow.activos.domain;
  *
  * <p>TODO (Fase 2): definir los valores y las transiciones permitidas.
  */
-public enum EstadoActivo {
-}
+public enum EstadoActivo {}

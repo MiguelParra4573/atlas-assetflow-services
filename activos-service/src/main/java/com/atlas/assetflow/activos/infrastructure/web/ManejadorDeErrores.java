@@ -7,13 +7,12 @@ import com.atlas.assetflow.activos.domain.CodigoActivoInvalido;
 import com.atlas.assetflow.activos.domain.TransicionDeEstadoInvalida;
 import com.atlas.assetflow.shared.domain.ConflictoDeConcurrencia;
 import com.atlas.assetflow.shared.domain.ExcepcionDeDominio;
+import java.util.HashMap;
+import java.util.Map;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Traduce las excepciones de dominio a respuestas HTTP con {@link ProblemDetail} (RFC 7807).

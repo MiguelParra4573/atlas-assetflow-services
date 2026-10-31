@@ -2,18 +2,19 @@ package com.atlas.assetflow.activos.domain;
 
 import java.time.Instant;
 import java.util.Objects;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Un cambio de estado del activo, con su instante. Se guarda el historial y no solo el estado
  * actual porque los indicadores de disponibilidad necesitan el tiempo acumulado en cada estado.
  *
  * @param estadoAnterior estado del que se sale; {@code null} en el registro inicial
- * @param estadoNuevo    estado al que se entra
- * @param ocurridaEn     instante del cambio
- * @param motivo         la orden de trabajo que la provoco, o la razon de la decision manual
+ * @param estadoNuevo estado al que se entra
+ * @param ocurridaEn instante del cambio
+ * @param motivo la orden de trabajo que la provoco, o la razon de la decision manual
  */
 public record TransicionEstado(
-        EstadoActivo estadoAnterior,
+        @Nullable EstadoActivo estadoAnterior,
         EstadoActivo estadoNuevo,
         Instant ocurridaEn,
         String motivo) {

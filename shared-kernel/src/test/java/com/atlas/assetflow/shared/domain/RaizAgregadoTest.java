@@ -1,20 +1,18 @@
 package com.atlas.assetflow.shared.domain;
 
-import org.junit.jupiter.api.Test;
-
-import java.time.Instant;
-import java.util.List;
-import java.util.UUID;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.time.Instant;
+import java.util.List;
+import java.util.UUID;
+import org.junit.jupiter.api.Test;
+
 class RaizAgregadoTest {
 
-    private record EventoDePrueba(UUID idEvento, Instant ocurridoEn) implements EventoDominio {
-    }
+    private record EventoDePrueba(UUID idEvento, Instant ocurridoEn) implements EventoDominio {}
 
     private static final class AgregadoDePrueba extends RaizAgregado {
         void hacerAlgo(Instant cuando) {
@@ -56,7 +54,8 @@ class RaizAgregadoTest {
 
         List<EventoDominio> eventos = agregado.pullEventos();
 
-        assertThrows(UnsupportedOperationException.class,
+        assertThrows(
+                UnsupportedOperationException.class,
                 () -> eventos.add(new EventoDePrueba(UUID.randomUUID(), Instant.EPOCH)));
     }
 

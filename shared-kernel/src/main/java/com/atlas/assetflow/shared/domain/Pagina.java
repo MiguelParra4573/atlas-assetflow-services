@@ -5,10 +5,10 @@ import java.util.List;
 /**
  * Pagina de resultados. Forma unica de respuesta de todo listado del sistema.
  *
- * @param contenido       elementos de esta pagina
- * @param pagina          indice de pagina solicitado, base cero
- * @param tamano          tamano de pagina solicitado
- * @param totalElementos  total de elementos que cumplen el filtro, en todas las paginas
+ * @param contenido elementos de esta pagina
+ * @param pagina indice de pagina solicitado, base cero
+ * @param tamano tamano de pagina solicitado
+ * @param totalElementos total de elementos que cumplen el filtro, en todas las paginas
  */
 public record Pagina<T>(List<T> contenido, int pagina, int tamano, long totalElementos) {
 
@@ -23,7 +23,8 @@ public record Pagina<T>(List<T> contenido, int pagina, int tamano, long totalEle
             throw new IllegalArgumentException("tamano debe ser positivo: " + tamano);
         }
         if (totalElementos < 0) {
-            throw new IllegalArgumentException("totalElementos no puede ser negativo: " + totalElementos);
+            throw new IllegalArgumentException(
+                    "totalElementos no puede ser negativo: " + totalElementos);
         }
         contenido = List.copyOf(contenido);
     }
@@ -36,7 +37,8 @@ public record Pagina<T>(List<T> contenido, int pagina, int tamano, long totalEle
         return (long) (pagina + 1) * tamano < totalElementos;
     }
 
-    public static <T> Pagina<T> de(List<T> contenido, SolicitudPagina solicitud, long totalElementos) {
+    public static <T> Pagina<T> de(
+            List<T> contenido, SolicitudPagina solicitud, long totalElementos) {
         return new Pagina<>(contenido, solicitud.pagina(), solicitud.tamano(), totalElementos);
     }
 }

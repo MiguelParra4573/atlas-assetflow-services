@@ -12,6 +12,9 @@ public class CodigoActivoDuplicado extends ExcepcionDeDominio {
 
     public static final String CODIGO = "CODIGO_ACTIVO_DUPLICADO";
 
+    // ObjectToString: ver la nota en ActivoConOrdenAbierta — CodigoActivo todavia no tiene
+    // toString() propio (Fase 2, TODO en CodigoActivo.java).
+    @SuppressWarnings("ObjectToString")
     public CodigoActivoDuplicado(CodigoActivo codigo) {
         super(CODIGO, "Ya existe un activo con el codigo " + codigo);
     }
