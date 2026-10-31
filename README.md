@@ -14,7 +14,8 @@ Frontend en el repo `atlas-assetflow-client`.
 ## Arranque local
 
 ```
-docker compose up -d                       # MongoDB + RabbitMQ (UI en :15672, atlas/atlas)
+# La infraestructura vive en ../platform (ver ../platform/README.md):
+#   cd ..\platform ; .\scripts\up.ps1 -Consoles
 ./gradlew :activos-service:bootRun         # http://localhost:8091/actuator/health
 ./gradlew build                            # compila y corre tests
 ```
