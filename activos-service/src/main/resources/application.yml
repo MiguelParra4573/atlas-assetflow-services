@@ -3,13 +3,18 @@ spring:
     name: activos-service
   data:
     mongodb:
-      uri: mongodb://localhost:27017/activos
+      # El puerto 15205 es el del bloque 152xx de este proyecto; lo publica
+      # platform/compose.yaml.
+      uri: ${MONGODB_URI:mongodb://localhost:15205/activos}
 
 management:
   endpoints:
     web:
       exposure:
-        include: health,info
+        include: health,info,prometheus
+  metrics:
+    tags:
+      application: ${spring.application.name}
 
 server:
   port: 8091
