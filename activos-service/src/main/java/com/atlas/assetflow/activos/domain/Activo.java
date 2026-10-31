@@ -9,9 +9,8 @@ import com.atlas.assetflow.shared.domain.RaizAgregado;
  * vive dentro del agregado, que recibe ese dato como parametro del comando.
  *
  * <p>TODO (Fase 2): modelar registro, cambio de estado y baja. La identidad es {@link ActivoId};
- * {@link CodigoActivo} es un atributo unico de negocio. Acumula sus eventos con
- * {@code registrarEvento} y guarda el historial de {@link TransicionEstado}. Sin {@code setEstado}
+ * {@link CodigoActivo} es un atributo unico de negocio. Acumula sus eventos con {@code
+ * registrarEvento} y guarda el historial de {@link TransicionEstado}. Sin {@code setEstado}
  * publico: las transiciones permitidas las decide el agregado.
  */
-public class Activo extends RaizAgregado {
-}
+public class Activo extends RaizAgregado {}

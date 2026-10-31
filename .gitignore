@@ -7,7 +7,13 @@ build/
 out/
 HELP.md
 
-# Documentacion de diseno: se mantiene solo en local, no se publica
+# Documentacion de diseno: se mantiene solo en local, no se publica.
+#
+# .claude/ sigue en uso (checkpoints de sesion). docs/ y /plan-cmms.md quedaron
+# obsoletas el 2026-10-29: esa documentacion se movio a la raiz del workspace
+# (docs/arquitectura.md, docs/plan.md), que no es un repositorio git y por
+# tanto no necesita ignorarse. Se dejan como guarda: si alguien vuelve a crear
+# cualquiera de las dos rutas aqui dentro, no se publica por accidente.
 .claude/
 docs/
 /plan-cmms.md

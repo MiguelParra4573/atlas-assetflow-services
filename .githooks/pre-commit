@@ -1,0 +1,28 @@
+#!/bin/sh
+# Gate rapido local. La autoridad es CI; aqui solo corre lo que tarda segundos.
+#
+# No corre Testcontainers (minutos y Docker), ni Error Prone (compilacion
+# completa), ni JaCoCo. Eso es trabajo de CI.
+#
+# Verifica, nunca arregla: un hook que reescribe archivos con staging parcial
+# deja el indice desincronizado y commitea algo que nadie leyo.
+set -e
+
+# Solo lo que esta en el indice. ACMR excluye los borrados: verificar un archivo
+# borrado falla.
+cambiados=$(git diff --cached --name-only --diff-filter=ACMR)
+java=$(printf '%s\n' "$cambiados" | grep -E '\.java$|\.gradle\.kts$' || true)
+
+if [ -z "$java" ]; then
+    # Un commit que solo toca markdown no paga el arranque de la JVM.
+    exit 0
+fi
+
+echo "pre-commit: spotlessCheck"
+
+if ! ./gradlew -q spotlessCheck; then
+    echo "" >&2
+    echo "pre-commit: el formato fallo." >&2
+    echo "  para arreglarlo: ./gradlew spotlessApply" >&2
+    exit 1
+fi

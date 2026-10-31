@@ -11,8 +11,12 @@ public class ConflictoDeConcurrencia extends ExcepcionDeDominio {
     public static final String CODIGO = "CONFLICTO_DE_CONCURRENCIA";
 
     public ConflictoDeConcurrencia(String agregado, Object identidad, Throwable causa) {
-        super(CODIGO,
-                "Otra operacion modifico " + agregado + " " + identidad
+        super(
+                CODIGO,
+                "Otra operacion modifico "
+                        + agregado
+                        + " "
+                        + identidad
                         + " al mismo tiempo. Reintenta la operacion.",
                 causa);
     }

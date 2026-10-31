@@ -3,25 +3,19 @@ package com.atlas.assetflow.activos.domain;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-/**
- * Tests de dominio puros (sin Spring). Quitar @Disabled a medida que se implementa cada caso.
- */
+/** Tests de dominio puros (sin Spring). Quitar @Disabled a medida que se implementa cada caso. */
 @Disabled("TODO Fase 2")
 class ActivoTest {
 
     @Test
-    void registrarActivoNuevoQuedaOperativo() {
-    }
+    void registrarActivoNuevoQuedaOperativo() {}
 
     @Test
-    void darDeBajaActivoSinOtAbiertaCambiaEstadoADadoDeBaja() {
-    }
+    void darDeBajaActivoSinOtAbiertaCambiaEstadoADadoDeBaja() {}
 
     @Test
-    void darDeBajaActivoConOtAbiertaLanzaExcepcionDeDominio() {
-    }
+    void darDeBajaActivoConOtAbiertaLanzaExcepcionDeDominio() {}
 
     @Test
-    void codigoActivoInvalidoSeRechazaAlConstruir() {
-    }
+    void codigoActivoInvalidoSeRechazaAlConstruir() {}
 }

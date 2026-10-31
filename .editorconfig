@@ -1,0 +1,19 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.java]
+indent_size = 4
+# Mismo ancho que google-java-format en modo AOSP, que es el que aplica
+# Spotless. Hasta ahora el objetivo de 100 columnas se respetaba a mano y no
+# estaba declarado en ningun sitio.
+max_line_length = 100
+
+[*.kts]
+indent_size = 4

@@ -3,7 +3,6 @@ package com.atlas.assetflow.activos.domain.evento;
 import com.atlas.assetflow.activos.domain.ActivoId;
 import com.atlas.assetflow.activos.domain.EstadoActivo;
 import com.atlas.assetflow.shared.domain.EventoDominio;
-
 import java.time.Instant;
 import java.util.UUID;
 
@@ -17,7 +16,8 @@ public record ActivoCambioEstado(
         ActivoId activoId,
         EstadoActivo estadoAnterior,
         EstadoActivo estadoNuevo,
-        String motivo) implements EventoDominio {
+        String motivo)
+        implements EventoDominio {
 
     public static ActivoCambioEstado de(
             ActivoId activoId,

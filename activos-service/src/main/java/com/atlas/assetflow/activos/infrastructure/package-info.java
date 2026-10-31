@@ -1,6 +1,6 @@
 /**
- * Adaptadores del contexto Activos: persistencia Mongo, capa web y publicacion de eventos.
- * Nada de aqui puede ser importado desde {@code domain}.
+ * Adaptadores del contexto Activos: persistencia Mongo, capa web y publicacion de eventos. Nada de
+ * aqui puede ser importado desde {@code domain}.
  *
  * <p>El adaptador Mongo, cuando se implemente, debe usar bloqueo optimista y traducir el fallo de
  * version a {@link com.atlas.assetflow.shared.domain.ConflictoDeConcurrencia}: la invariante dentro

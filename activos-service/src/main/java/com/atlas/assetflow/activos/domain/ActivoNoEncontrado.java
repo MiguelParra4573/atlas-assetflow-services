@@ -13,6 +13,9 @@ public class ActivoNoEncontrado extends ExcepcionDeDominio {
         super(CODIGO, "No existe el activo " + id);
     }
 
+    // ObjectToString: ver la nota en ActivoConOrdenAbierta — CodigoActivo todavia no tiene
+    // toString() propio (Fase 2, TODO en CodigoActivo.java).
+    @SuppressWarnings("ObjectToString")
     public ActivoNoEncontrado(CodigoActivo codigo) {
         super(CODIGO, "No existe el activo con codigo " + codigo);
     }
